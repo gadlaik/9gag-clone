@@ -1,0 +1,56 @@
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 0px 10px;
+}
+
+.navbar,
+.navbar .menu-nav,
+.navbar .user-nav {
+  height: 49px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+/* menu nav */
+.menu,
+.logo,
+.secondary-menu,
+.secondary-menu li,
+.secondary-menu li a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.menu svg {
+  color: whitesmoke;
+}
+
+.logo img {
+  max-height: 50%;
+}
+
+li {
+  color: whitesmoke;
+}
+li a {
+  color: whitesmoke;
+  gap: 3px !important;
+}
+li a img {
+  height: 67%;
+}
+
+.random {
+  color: rgba(255, 0, 0, 0.9);
+}
+
+/* user nav */
+.user-nav {
+  color: whitesmoke;
+}
