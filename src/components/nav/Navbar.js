@@ -4,33 +4,33 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ShuffleOnIcon from "@mui/icons-material/ShuffleOn";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import SearchIcon from "@mui/icons-material/Search";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import AddIcon from "@mui/icons-material/Add";
 import logo from "../../assets/9gagLogo.png";
-import funny from "../../assets/funnySection.jpg";
+import kekw from "../../assets/KEKW.png";
 
 function Navbar() {
   return (
-    <div className="navbar">
-      <div className="menu-nav">
-        <div className="menu">
-          <MenuIcon />
-        </div>
-        <a href="/" className="logo">
-          <img src={logo} alt="logo" />
-        </a>
+    <header className="top-nav">
+      <nav className="nav-menu">
         <ul className="secondary-menu">
+          <div href="#" id="side-menu-icon">
+            <MenuIcon />
+          </div>
+          <a href="#" id="logo">
+            <img src={logo} alt="logo" />
+          </a>
           <li>
             <a href="#">
-              <ShuffleOnIcon /> Shuffle
+              <ShuffleOnIcon style={{ color: "darkorange" }} /> Shuffle
             </a>
           </li>
           <li>
             <a href="#">
               <PhoneAndroidIcon /> Get App
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src={funny} alt="funny section" />
             </a>
           </li>
           <li>
@@ -40,24 +40,37 @@ function Navbar() {
             <a href="#">Crypto</a>
           </li>
           <li>
-            <a href="#">80s</a>
+            <a href="#" title="Funny">
+              <img src={kekw} alt="KEKW" />
+            </a>
           </li>
           <li>
-            <a href="#">
-              <QuestionMarkIcon className="random" />
+            <a href="#" title="Random">
+              <QuestionMarkIcon style={{ color: "red" }} />
             </a>
           </li>
         </ul>
-      </div>
-
-      <div className="user-nav">
-        <li></li>
-        <li>*</li>
-        <li>*</li>
-        <li>*</li>
-        <li>*</li>
-      </div>
-    </div>
+        <ul className="user-menu">
+          <li>
+            <SearchIcon />
+          </li>
+          <li>
+            <NotificationsIcon />
+          </li>
+          <li>
+            <ChatBubbleIcon />
+          </li>
+          <li id="avatar">
+            <AccountCircleIcon />
+          </li>
+          <li>
+            <button id="upload">
+              <AddIcon /> Upload
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 

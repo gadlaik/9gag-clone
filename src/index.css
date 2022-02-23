@@ -18,11 +18,11 @@ body {
   background-color: #050505;
 }
 
-ul,
-li {
+ul {
   list-style: none;
 }
 
 a {
   text-decoration: none;
+  color: white;
 }
