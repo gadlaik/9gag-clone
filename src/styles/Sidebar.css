@@ -1,0 +1,8 @@
+#sidebar {
+  width: 300px;
+  float: right;
+  background-color: royalblue;
+  height: 720px;
+  overflow-y: hidden;
+  margin-top: 15px;
+}

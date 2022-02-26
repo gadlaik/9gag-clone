@@ -46,7 +46,13 @@ function Navbar() {
           </li>
           <li>
             <a href="#" title="Random">
-              <QuestionMarkIcon style={{ color: "red" }} />
+              <QuestionMarkIcon
+                style={{
+                  color: "red",
+                  fontSize: "xx-large",
+                  transform: "translateX(-3px)",
+                }}
+              />
             </a>
           </li>
         </ul>

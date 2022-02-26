@@ -1,0 +1,26 @@
+#current-section {
+  width: 640px;
+  float: left;
+  height: calc(100vh - 64px);
+  background-color: #050505;
+}
+
+/* Short menu */
+.short-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+}
+
+.short-menu li a {
+  padding: 10px 15px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 99px;
+}
+.short-menu li a.active {
+  background-color: white;
+  color: black;
+}
