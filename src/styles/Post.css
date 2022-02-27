@@ -1,0 +1,107 @@
+#post {
+  width: 100%;
+  color: white;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+  padding-bottom: 24px;
+  padding-top: 20px;
+}
+
+/* post info */
+.post-info {
+  max-width: 100%;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 31px;
+  padding-bottom: 8px;
+}
+
+.post-title {
+  padding-bottom: 8px;
+  font-size: 20px;
+}
+
+.section-info {
+  display: flex;
+  gap: 5px;
+}
+
+.section-info img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.section-info p,
+.section-info span {
+  opacity: 0.4;
+  font-size: 14px;
+}
+
+.post-settings {
+  display: flex;
+  gap: 15px;
+}
+.post-settings svg {
+  font-size: 18px;
+}
+
+/* post content */
+.post-content {
+  background-color: #141414;
+  display: flex;
+  margin-bottom: 16px;
+}
+.post-content img {
+  max-width: 100%;
+  margin: auto;
+  max-height: 1080px;
+  min-height: 333px;
+}
+
+/* vote share */
+.post-social {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.vote-comment,
+.share {
+  display: flex;
+  gap: 6px;
+}
+.vote-comment button,
+.share button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: #050505;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 3px;
+  color: rgba(245, 245, 245, 0.7);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-comment svg {
+  font-size: 16px;
+  transform: translateY(1px);
+}
+
+.share button {
+  padding: 5px 8px;
+}
+
+.fb-share {
+  background: #1877f2 !important;
+  color: white !important;
+}
+.pin-share {
+  background: #b8001c !important;
+  color: white !important;
+}

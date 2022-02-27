@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/CurrentSection.css";
+import Post from "../Post/Post";
 import ShortMenu from "./ShortMenu";
 
 function CurrentSection() {
@@ -7,9 +8,11 @@ function CurrentSection() {
     <div id="current-section">
       <ShortMenu />
       <div className="post">
-        <img
-          src="https://img-9gag-fun.9cache.com/photo/aYrV2Aw_460swp.webp"
-          alt="meme"
+        <Post
+          imgSrc={"https://img-9gag-fun.9cache.com/photo/a51QMOL_460swp.webp"}
+        />
+        <Post
+          imgSrc={"https://img-9gag-fun.9cache.com/photo/aBndB9Z_460swp.webp"}
         />
       </div>
     </div>
