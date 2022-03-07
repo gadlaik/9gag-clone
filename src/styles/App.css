@@ -26,3 +26,15 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.App {
+  min-height: calc(100vh - 15px);
+  /* width: 100%; */
+}
+
+#container {
+  width: 992px;
+  height: calc(100vh - 64px);
+  padding: 0px 16px;
+  margin: auto;
+}

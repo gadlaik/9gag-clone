@@ -3,6 +3,9 @@
   height: 49px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.4);
   color: white;
+  position: fixed;
+  z-index: 100;
+  background-color: #050505;
 }
 
 .nav-menu {
@@ -49,6 +52,7 @@
 /* user menu */
 .user-menu {
   gap: 12px;
+  position: relative;
 }
 
 .user-menu li {
@@ -76,4 +80,32 @@
   margin-right: 5px;
   font-size: 20px;
   opacity: 1;
+}
+
+.hoverCircle::before {
+  content: "";
+  background: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 3px;
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  transform: translate(-6px, -6px);
+  transition-duration: 250ms;
+}
+.post-settings div:hover::before {
+  opacity: 0.15;
+}
+.menuHover::before {
+  content: "";
+  transform: translate(0px, 0px);
+  cursor: pointer;
+}
+
+#avatar:hover,
+#upload:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }

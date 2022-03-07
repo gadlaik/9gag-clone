@@ -25,9 +25,14 @@ function Post({ imgSrc }) {
           <span>-</span>
           <p className="time-info">1h</p>
         </div>
+
         <div className="post-settings">
-          <BookmarkBorderIcon />
-          <MoreVertIcon />
+          <div className="hoverCircle settingsHover">
+            <BookmarkBorderIcon />
+          </div>
+          <div className="hoverCircle  settingsHover">
+            <MoreVertIcon />
+          </div>
         </div>
       </div>
 

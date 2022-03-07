@@ -18,6 +18,25 @@
   padding-bottom: 8px;
 }
 
+.section-ico {
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.section-name {
+  cursor: pointer;
+}
+.section-name:hover {
+  opacity: 0.3;
+}
+
+.settingsHover::before {
+  content: "";
+  transform: translate(-4px, -4px) !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+
 .post-title {
   padding-bottom: 8px;
   font-size: 20px;
@@ -36,7 +55,7 @@
 
 .section-info p,
 .section-info span {
-  opacity: 0.4;
+  opacity: 0.6;
   font-size: 14px;
 }
 
@@ -46,6 +65,8 @@
 }
 .post-settings svg {
   font-size: 18px;
+  opacity: 0.4;
+  cursor: pointer;
 }
 
 /* post content */
@@ -87,6 +108,9 @@
   font-size: 14px;
   cursor: pointer;
 }
+.vote-comment button:hover {
+  background-color: #181818;
+}
 
 .btn-comment svg {
   font-size: 16px;
@@ -102,6 +126,11 @@
   color: white !important;
 }
 .pin-share {
-  background: #b8001c !important;
+  background: #e60023 !important;
   color: white !important;
+}
+
+.fb-share:hover,
+.pin-share:hover {
+  filter: brightness(1.25);
 }

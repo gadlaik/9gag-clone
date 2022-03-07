@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/Container.css";
 import CurrentSection from "../CurrentSection/CurrentSection";
 import Sidebar from "../Sidebar/Sidebar";
 

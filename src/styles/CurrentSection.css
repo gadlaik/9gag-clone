@@ -3,9 +3,15 @@
   float: left;
   height: calc(100vh - 64px);
   background-color: #050505;
+  transform: translateY(119px);
 }
 
 /* short menu */
+.short-menu-container {
+  width: 992px;
+  padding: 0px 16px;
+  margin: auto;
+}
 .short-menu {
   width: 100%;
   display: flex;
@@ -13,6 +19,12 @@
   align-items: center;
   height: 70px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+  transform: translateY(49px);
+  width: 640px;
+  position: fixed;
+  z-index: 100;
+  background-color: #050505;
+  gap: 8px;
 }
 
 .short-menu li a {
@@ -23,4 +35,10 @@
 .short-menu li a.active {
   background-color: white;
   color: black;
+}
+.short-menu li a:hover {
+  background-color: #1f1f1f;
+}
+.short-menu li a.active:hover {
+  background-color: lightgray;
 }

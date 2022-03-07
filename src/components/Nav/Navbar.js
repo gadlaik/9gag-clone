@@ -17,9 +17,9 @@ function Navbar() {
     <header className="top-nav">
       <nav className="nav-menu">
         <ul className="secondary-menu">
-          <div href="#" id="side-menu-icon">
+          <li href="#" id="side-menu-icon" className="hoverCircle menuHover">
             <MenuIcon />
-          </div>
+          </li>
           <a href="#" id="logo">
             <img src={logo} alt="logo" />
           </a>
@@ -57,13 +57,13 @@ function Navbar() {
           </li>
         </ul>
         <ul className="user-menu">
-          <li>
+          <li className="hoverCircle">
             <SearchIcon />
           </li>
-          <li>
+          <li className="hoverCircle">
             <NotificationsIcon />
           </li>
-          <li>
+          <li className="hoverCircle">
             <ChatBubbleIcon />
           </li>
           <li id="avatar">
