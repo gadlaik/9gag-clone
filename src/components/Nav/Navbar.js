@@ -60,7 +60,7 @@ function Navbar() {
           <li className="hoverCircle">
             <SearchIcon />
           </li>
-          <li className="hoverCircle">
+          <li className="hoverCircle" id="notifications">
             <NotificationsIcon />
           </li>
           <li className="hoverCircle">
@@ -68,6 +68,28 @@ function Navbar() {
           </li>
           <li id="avatar">
             <AccountCircleIcon />
+            <div className="logIn-signUp">
+              <button
+                className="logIn-btn"
+                onClick={() => {
+                  document
+                    .querySelector(".signUp-container")
+                    .classList.add("show-form");
+                }}
+              >
+                Log in
+              </button>
+              <button
+                className="signUp-btn"
+                onClick={() => {
+                  document
+                    .querySelector(".logIn-container")
+                    .classList.add("show-form");
+                }}
+              >
+                Sign up
+              </button>
+            </div>
           </li>
           <li>
             <button id="upload">

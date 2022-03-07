@@ -63,11 +63,14 @@
   opacity: 0.67;
 }
 
-#avatar svg {
-  font-size: xx-large;
+#avatar svg,
+#notifications {
+  display: none;
 }
 
-#upload {
+#upload,
+.signUp-btn,
+.logIn-btn {
   padding: 8px 14px;
   border-radius: 99px;
   font-weight: bold;
@@ -75,6 +78,7 @@
   background-color: #07f;
   color: whitesmoke;
   border: none;
+  cursor: pointer;
 }
 #upload svg {
   margin-right: 5px;
@@ -108,4 +112,10 @@
 #upload:hover {
   opacity: 0.9;
   cursor: pointer;
+}
+
+/* Log, Sign Buttons */
+
+.logIn-btn {
+  background-color: inherit;
 }

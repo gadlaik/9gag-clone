@@ -1,9 +1,17 @@
 import React from "react";
 
 function ShortMenu() {
+  function changeActive(e) {
+    document
+      .querySelectorAll(".short-menu li a")
+      .forEach((item) => item.classList.remove("active"));
+
+    if (e.target.nodeName === "A") e.target.classList.add("active");
+  }
+
   return (
     <div className="short-menu-container">
-      <ul className="short-menu">
+      <ul className="short-menu" onClick={changeActive}>
         <li>
           <a href="#" className="active">
             Hot
