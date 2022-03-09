@@ -32,8 +32,8 @@ function LogInForm() {
         <p id="or-para">OR</p>
 
         <div className="signUp-form">
-          <input type="email" id="signUp-email" placeholder="Email address" />
-          <input type="password" id="signUp-password" placeholder="Password" />
+          <input type="email" id="logIn-email" placeholder="Email address" />
+          <input type="password" id="logIn-password" placeholder="Password" />
           <button>Sign up</button>
           <a href="#">Forgot password?</a>
         </div>

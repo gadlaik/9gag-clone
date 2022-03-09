@@ -4,6 +4,7 @@ import ShortMenu from "./components/CurrentSection/ShortMenu";
 import Navbar from "./components/Nav/Navbar";
 import SignUpForm from "./components/Nav/SignUpForm";
 import LogInForm from "./components/Nav/LogInForm";
+import SideMenu from "./components/CurrentSection/SideMenu";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <SignUpForm />
       <LogInForm />
+      <SideMenu />
       <ShortMenu />
       <Container />
     </div>

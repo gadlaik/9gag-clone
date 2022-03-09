@@ -9,7 +9,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddIcon from "@mui/icons-material/Add";
-import logo from "../../assets/9gagLogo.png";
 import kekw from "../../assets/KEKW.png";
 
 function Navbar() {
@@ -21,7 +20,7 @@ function Navbar() {
             <MenuIcon />
           </li>
           <a href="#" id="logo">
-            <img src={logo} alt="logo" />
+            9GAG
           </a>
           <li>
             <a href="#">

@@ -94,7 +94,7 @@
   border-radius: 50%;
   padding: 3px;
   position: absolute;
-  z-index: 0;
+  z-index: 25000;
   opacity: 0;
   transform: translate(-6px, -6px);
   transition-duration: 250ms;
