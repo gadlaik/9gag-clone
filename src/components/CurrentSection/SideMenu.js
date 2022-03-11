@@ -75,53 +75,64 @@ function SideMenu() {
   );
 
   return (
-    <div className="side-menu">
-      <div className="side-menu-header">
-        <li href="#" id="side-menu-icon" className="hoverCircle menuHover">
-          <MenuIcon />
-        </li>
-        <a href="#" id="logo">
-          9GAG
-        </a>
+    <div className="side-menu-background">
+      <div className="side-menu">
+        <div className="side-menu-header">
+          <li
+            href="#"
+            id="side-menu-icon"
+            className="hoverCircle menuHover"
+            onClick={() => {
+              document
+                .querySelector(".side-menu-background")
+                .classList.toggle("show-menu");
+            }}
+          >
+            <MenuIcon />
+          </li>
+          <a href="#" id="logo">
+            9GAG
+          </a>
+        </div>
+        <ul className="main-sections">
+          <h4>9GAG</h4>
+          <li>
+            <a href="">
+              <HomeIcon /> Hot
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <TrendingUpIcon /> Trending
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <AccessTimeIcon /> Fresh
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <BarChartIcon /> Top
+            </a>
+          </li>
+        </ul>
+
+        <ul className="recents-sections">
+          <h4>Recents</h4>
+          {recents && recents}
+        </ul>
+
+        <ul className="popular-sections">
+          <h4>Popular</h4>
+          {popular && popular}
+        </ul>
+
+        <ul className="all-sections">
+          <h4>All Sections</h4>
+          {allSections}
+        </ul>
       </div>
-      <ul className="main-sections">
-        <h4>9GAG</h4>
-        <li>
-          <a href="">
-            <HomeIcon /> Hot
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <TrendingUpIcon /> Trending
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <AccessTimeIcon /> Fresh
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <BarChartIcon /> Top
-          </a>
-        </li>
-      </ul>
-
-      <ul className="recents-sections">
-        <h4>Recents</h4>
-        {recents && recents}
-      </ul>
-
-      <ul className="popular-sections">
-        <h4>Popular</h4>
-        {popular && popular}
-      </ul>
-
-      <ul className="all-sections">
-        <h4>All Sections</h4>
-        {allSections}
-      </ul>
     </div>
   );
 }

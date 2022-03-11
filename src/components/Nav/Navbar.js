@@ -16,7 +16,16 @@ function Navbar() {
     <header className="top-nav">
       <nav className="nav-menu">
         <ul className="secondary-menu">
-          <li href="#" id="side-menu-icon" className="hoverCircle menuHover">
+          <li
+            href="#"
+            id="side-menu-icon"
+            className="hoverCircle menuHover"
+            onClick={() => {
+              document
+                .querySelector(".side-menu-background")
+                .classList.toggle("show-menu");
+            }}
+          >
             <MenuIcon />
           </li>
           <a href="#" id="logo">
