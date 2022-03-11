@@ -5,31 +5,74 @@ import HomeIcon from "@mui/icons-material/Home";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import StarIcon from "@mui/icons-material/Star";
+import CloseIcon from "@mui/icons-material/Close";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
 
 function SideMenu() {
   const [recents, setRecents] = useState();
+  const [popular, setPopular] = useState();
+  const [allSections, setAllSections] = useState();
 
-  useEffect(() => {
-    return onSnapshot(collection(db, "recents"), (snapshot) =>
-      setRecents(
-        snapshot.docs
-          .map((snap) => snap.data())
-          .map((i, index) => (
-            <li key={index}>
-              <a href="#">
-                <img src={i.imgSrc} alt="section img" /> {i.section}
-              </a>
-            </li>
-          ))
-      )
-    );
-  }, []);
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "sections"), (snapshot) => {
+        setRecents(
+          snapshot.docs
+            .filter((doc) => doc.data().recents)
+            .map((i) => (
+              <li key={i.id}>
+                <a href="#">
+                  <img src={i.data().imgSrc} alt="section img" />{" "}
+                  {i.data().section}
+                </a>
 
-  setTimeout(() => {
-    console.log(recents);
-  }, 1000);
+                <div className="close-fav">
+                  <CloseIcon className="remove-fav" />
+                  <StarIcon className="fav-btn" />
+                </div>
+              </li>
+            ))
+        );
+
+        setPopular(
+          snapshot.docs
+            .filter((doc) => doc.data().popular)
+            .map((i) => (
+              <li key={i.id}>
+                <a href="#">
+                  <img src={i.data().imgSrc} alt="section img" />{" "}
+                  {i.data().section}
+                </a>
+
+                <div className="close-fav">
+                  <StarIcon className="fav-btn" />
+                </div>
+              </li>
+            ))
+        );
+
+        setAllSections(
+          snapshot.docs
+            .filter((doc) => !doc.data().popular)
+            .sort((a, b) => a.data().section.localeCompare(b.data().section))
+            .map((i) => (
+              <li key={i.id}>
+                <a href="#">
+                  <img src={i.data().imgSrc} alt="section img" />{" "}
+                  {i.data().section}
+                </a>
+
+                <div className="close-fav">
+                  <StarIcon className="fav-btn" />
+                </div>
+              </li>
+            ))
+        );
+      }),
+    []
+  );
 
   return (
     <div className="side-menu">
@@ -72,115 +115,12 @@ function SideMenu() {
 
       <ul className="popular-sections">
         <h4>Popular</h4>
-        <li>
-          <a href="">Funny</a>
-        </li>
-        <li>
-          <a href="">Latest News</a>
-        </li>
-        <li>
-          <a href="">Politics</a>
-        </li>
-        <li>
-          <a href="">WTF</a>
-        </li>
-        <li>
-          <a href="">Cryptocurrency</a>
-        </li>
-        <li>
-          <a href="">Anime & Manga</a>
-        </li>
-        <li>
-          <a href="">Random</a>
-        </li>
-        <li>
-          <a href="">Animals</a>
-        </li>
-        <li>
-          <a href="">Awesome</a>
-        </li>
-        <li>
-          <a href="">Gaming</a>
-        </li>
-        <li>
-          <a href="">Car</a>
-        </li>
-        <li>
-          <a href="">GIF</a>
-        </li>
-        <li>
-          <a href="">League of Legends</a>
-        </li>
-        <li>
-          <a href="">Video</a>
-        </li>
+        {popular && popular}
       </ul>
 
       <ul className="all-sections">
         <h4>All Sections</h4>
-        <li>
-          <a href="">Among Us</a>
-        </li>
-        <li>
-          <a href="">Ask 9GAG</a>
-        </li>
-        <li>
-          <a href="">Coronavirus</a>
-        </li>
-        <li>
-          <a href="">Countryballs</a>
-        </li>
-        <li>
-          <a href="">Crappy Design</a>
-        </li>
-        <li>
-          <a href="">Drawing, DIY & Crafts</a>
-        </li>
-        <li>
-          <a href="">Football</a>
-        </li>
-        <li>
-          <a href="">Fashion & Beauty</a>
-        </li>
-        <li>
-          <a href="">Food & Drinks</a>
-        </li>
-        <li>
-          <a href="">Fortnite</a>
-        </li>
-        <li>
-          <a href="">History</a>
-        </li>
-        <li>
-          <a href="">Movie & TV</a>
-        </li>
-        <li>
-          <a href="">Music</a>
-        </li>
-        <li>
-          <a href="">NBA</a>
-        </li>
-        <li>
-          <a href="">Sport</a>
-        </li>
-        <li>
-          <a href="">PC Master Race</a>
-        </li>
-        <li>
-          <a href="">Pokémon</a>
-        </li>
-        <li>
-          <a href="">PUBG</a>
-        </li>
-        <li>
-          <a href="">Satisfying</a>
-        </li>
-        <li>
-          <a href="">Science & Tech</a>
-        </li>
-        <li>
-          <a href="">Wholesome</a>
-        </li>
+        {allSections}
       </ul>
     </div>
   );

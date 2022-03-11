@@ -99,7 +99,8 @@
   transform: translate(-6px, -6px);
   transition-duration: 250ms;
 }
-.post-settings div:hover::before {
+.post-settings div:hover::before,
+.hoverCircle:hover::before {
   opacity: 0.15;
 }
 .menuHover::before {
