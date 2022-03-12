@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import GoogleIcon from "@mui/icons-material/Google";
 
 function LogInForm() {
-  useEffect(
-    () => document.querySelector(".logIn-container").classList.add("showForm"),
-    []
-  );
-
   return (
     <div className="logIn-container">
       <form className="logIn">
@@ -35,7 +30,7 @@ function LogInForm() {
           <input type="email" id="logIn-email" placeholder="Email address" />
           <input type="password" id="logIn-password" placeholder="Password" />
           <button>Sign up</button>
-          <a href="#">Forgot password?</a>
+          <a href="/">Forgot password?</a>
         </div>
       </form>
     </div>

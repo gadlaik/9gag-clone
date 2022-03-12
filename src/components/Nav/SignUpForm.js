@@ -1,16 +1,7 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import { signUp } from "../../firebase";
 
 function SignUpForm() {
-  const handleSignUp = async () => {
-    try {
-      await signUp();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <div className="signUp-container">
       <form className="signUp">
@@ -33,7 +24,7 @@ function SignUpForm() {
           <input type="email" id="signUp-email" placeholder="Email address" />
           <input type="password" id="signUp-password" placeholder="Password" />
           <button>Sign up</button>
-          <a href="#">Already a member? Log in</a>
+          <a href="/">Already a member? Log in</a>
         </div>
       </form>
     </div>

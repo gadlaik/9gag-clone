@@ -64,7 +64,8 @@
 }
 
 #avatar svg,
-#notifications {
+#notifications,
+#upload {
   display: none;
 }
 
@@ -115,8 +116,105 @@
   cursor: pointer;
 }
 
-/* Log, Sign Buttons */
+/* Sign Up, Log In Form */
+.show-form {
+  display: flex !important;
+}
 
 .logIn-btn {
   background-color: inherit;
+}
+
+.signUp-container,
+.logIn-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUp,
+.logIn {
+  width: 540px;
+  height: 358px;
+  background-color: whitesmoke;
+  border-radius: 6px;
+}
+
+.close-title {
+  display: flex;
+  padding: 10px;
+  gap: 22px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+}
+.close-btn {
+  cursor: pointer;
+}
+.close-title h3 {
+  transform: translateY(1px);
+}
+
+.signUp-form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 6px;
+}
+.signUp-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  outline: none;
+}
+
+.signUp-form button {
+  padding: 15px;
+  border-radius: 99px;
+  border: none;
+  background-color: rgba(0, 119, 255, 0.4);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+.signUp-form a {
+  color: black;
+  margin: auto;
+}
+
+/* Log in */
+.logIn {
+  height: 420px;
+}
+
+.google-logIn {
+  display: flex;
+  padding: 15px;
+  border-radius: 99px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px auto;
+  width: calc(100% - 30px);
+  cursor: pointer;
+  color: #4c8bf5;
+}
+
+.google-logIn svg {
+  position: absolute;
+  transform: translateY(-3px);
+}
+
+.google-logIn p {
+  margin: auto;
+}
+
+#or-para {
+  text-align: center;
+  opacity: 0.5;
 }

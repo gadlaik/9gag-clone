@@ -23,7 +23,7 @@ function SideMenu() {
             .filter((doc) => doc.data().recents)
             .map((i) => (
               <li key={i.id}>
-                <a href="#">
+                <a href="/">
                   <img src={i.data().imgSrc} alt="section img" />{" "}
                   {i.data().section}
                 </a>
@@ -41,7 +41,7 @@ function SideMenu() {
             .filter((doc) => doc.data().popular)
             .map((i) => (
               <li key={i.id}>
-                <a href="#">
+                <a href="/">
                   <img src={i.data().imgSrc} alt="section img" />{" "}
                   {i.data().section}
                 </a>
@@ -59,7 +59,7 @@ function SideMenu() {
             .sort((a, b) => a.data().section.localeCompare(b.data().section))
             .map((i) => (
               <li key={i.id}>
-                <a href="#">
+                <a href="/">
                   <img src={i.data().imgSrc} alt="section img" />{" "}
                   {i.data().section}
                 </a>
@@ -75,44 +75,52 @@ function SideMenu() {
   );
 
   return (
-    <div className="side-menu-background">
+    <div
+      className="side-menu-background"
+      onClick={(e) =>
+        e.target.className.includes("side-menu-background") &&
+        document
+          .querySelector(".side-menu-background")
+          .classList.remove("show-menu")
+      }
+    >
       <div className="side-menu">
         <div className="side-menu-header">
           <li
             href="#"
             id="side-menu-icon"
             className="hoverCircle menuHover"
-            onClick={() => {
+            onClick={() =>
               document
                 .querySelector(".side-menu-background")
-                .classList.toggle("show-menu");
-            }}
+                .classList.toggle("show-menu")
+            }
           >
             <MenuIcon />
           </li>
-          <a href="#" id="logo">
+          <a href="/" id="logo">
             9GAG
           </a>
         </div>
         <ul className="main-sections">
           <h4>9GAG</h4>
           <li>
-            <a href="">
+            <a href="/">
               <HomeIcon /> Hot
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/">
               <TrendingUpIcon /> Trending
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/">
               <AccessTimeIcon /> Fresh
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/">
               <BarChartIcon /> Top
             </a>
           </li>
