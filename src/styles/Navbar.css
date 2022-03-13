@@ -63,10 +63,13 @@
   opacity: 0.67;
 }
 
-#avatar svg,
+#avatar,
 #notifications,
 #upload {
   display: none;
+}
+.user-menu > .hoverCircle {
+  transform: translateY(3px);
 }
 
 #upload,
@@ -187,7 +190,6 @@
   margin: auto;
 }
 
-/* Log in */
 .logIn {
   height: 420px;
 }

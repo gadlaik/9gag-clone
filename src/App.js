@@ -4,7 +4,7 @@ import ShortMenu from "./components/CurrentSection/ShortMenu";
 import Navbar from "./components/Nav/Navbar";
 import SignUpForm from "./components/Nav/SignUpForm";
 import LogInForm from "./components/Nav/LogInForm";
-import SideMenu from "./components/CurrentSection/SideMenu";
+import SideMenu from "./components/Nav/SideMenu";
 
 function App() {
   return (

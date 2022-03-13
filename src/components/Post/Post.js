@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/Post.css";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
@@ -10,9 +9,17 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import ShareIcon from "@mui/icons-material/Share";
 
-function Post({ imgSrc }) {
+function Post({
+  section,
+  title,
+  imgSrc,
+  upvotes,
+  downvotes,
+  comments,
+  gifSrc,
+}) {
   return (
-    <div id="post">
+    <div className="post">
       {/* info, settings */}
       <div className="post-info">
         <div className="section-info">
@@ -21,9 +28,9 @@ function Post({ imgSrc }) {
             alt="section-ico"
             className="section-ico"
           />
-          <p className="section-name">Funny</p>
+          <p className="section-name">{section}</p>
           <span>-</span>
-          <p className="time-info">1h</p>
+          <p className="time-info">~1h</p>
         </div>
 
         <div className="post-settings">
@@ -37,9 +44,15 @@ function Post({ imgSrc }) {
       </div>
 
       {/* title, content */}
-      <h2 className="post-title">Might as well give it a try</h2>
+      <h2 className="post-title">{title}</h2>
       <div className="post-content">
-        <img src={imgSrc} alt="post img" />
+        {imgSrc ? (
+          <img src={imgSrc} alt="post img" />
+        ) : (
+          <video controls preload="auto">
+            <source src={gifSrc} type="video/mp4" />
+          </video>
+        )}
       </div>
 
       {/* vote, comment, share */}
@@ -47,14 +60,14 @@ function Post({ imgSrc }) {
         <div className="vote-comment">
           <button className="btn-upvote">
             <ArrowUpwardIcon />
-            <p className="upvote-count">696</p>
+            <p className="upvote-count">{upvotes}</p>
           </button>
           <button className="btn-downvote">
-            <ArrowDownwardIcon /> <p className="downvote-count">39</p>
+            <ArrowDownwardIcon /> <p className="downvote-count">{downvotes}</p>
           </button>
           <button className="btn-comment">
             <ChatBubbleIcon />
-            <p className="comment-count">25</p>
+            <p className="comment-count">{comments}</p>
           </button>
         </div>
 

@@ -1,4 +1,4 @@
-#post {
+.post {
   width: 100%;
   color: white;
   border-bottom: 1px solid rgba(128, 128, 128, 0.4);
@@ -75,7 +75,8 @@
   display: flex;
   margin-bottom: 16px;
 }
-.post-content img {
+.post-content img,
+.post-content video {
   max-width: 100%;
   margin: auto;
   max-height: 1080px;

@@ -19,13 +19,14 @@
   padding: 0px 15px;
   width: 240px;
   border-right: 1px solid rgba(128, 128, 128, 0.4);
-  max-height: calc(100vh - 15px);
+  max-height: calc(100vh - 65px);
   overflow-y: hidden;
   scrollbar-width: 0px;
   -ms-overflow-style: none;
   overscroll-behavior: contain;
   z-index: 1001;
   left: 0;
+  transform: translateY(50px);
 }
 .side-menu:hover {
   overflow-y: scroll;
@@ -34,24 +35,15 @@
   display: none;
 }
 
-.side-menu ul h4 {
+.side-menu ul h4,
+h5 {
   color: rgba(245, 245, 245, 0.5);
   padding-bottom: 10px;
 }
 
-.side-menu-header {
-  height: 49px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
-  border-right: 1px solid rgba(128, 128, 128, 0.4);
-  color: whitesmoke;
-  display: flex;
-  gap: 18px;
-  width: 240px;
-  padding-left: 15px;
-  transform: translateX(-15px);
-  position: fixed;
-  background: #050505;
-  z-index: 10002;
+.main-sections h5 {
+  padding-top: 12px;
+  font-size: 14px;
 }
 
 #logo {

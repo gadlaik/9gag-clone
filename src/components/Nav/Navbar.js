@@ -28,32 +28,32 @@ function Navbar() {
           >
             <MenuIcon />
           </li>
-          <a href="#" id="logo">
+          <a href="/" id="logo">
             9GAG
           </a>
           <li>
-            <a href="#">
+            <a href="/">
               <ShuffleOnIcon style={{ color: "darkorange" }} /> Shuffle
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/">
               <PhoneAndroidIcon /> Get App
             </a>
           </li>
           <li>
-            <a href="#">Donate</a>
+            <a href="/">Donate</a>
           </li>
           <li>
-            <a href="#">Crypto</a>
+            <a href="/">Crypto</a>
           </li>
           <li>
-            <a href="#" title="Funny">
+            <a href="/" title="Funny">
               <img src={kekw} alt="KEKW" />
             </a>
           </li>
           <li>
-            <a href="#" title="Random">
+            <a href="/" title="Random">
               <QuestionMarkIcon
                 style={{
                   color: "red",
@@ -76,28 +76,28 @@ function Navbar() {
           </li>
           <li id="avatar">
             <AccountCircleIcon />
-            <div className="logIn-signUp">
-              <button
-                className="logIn-btn"
-                onClick={() => {
-                  document
-                    .querySelector(".signUp-container")
-                    .classList.add("show-form");
-                }}
-              >
-                Log in
-              </button>
-              <button
-                className="signUp-btn"
-                onClick={() => {
-                  document
-                    .querySelector(".logIn-container")
-                    .classList.add("show-form");
-                }}
-              >
-                Sign up
-              </button>
-            </div>
+          </li>
+          <li className="logIn-signUp">
+            <button
+              className="logIn-btn"
+              onClick={() => {
+                document
+                  .querySelector(".logIn-container")
+                  .classList.add("show-form");
+              }}
+            >
+              Log in
+            </button>
+            <button
+              className="signUp-btn"
+              onClick={() => {
+                document
+                  .querySelector(".signUp-container")
+                  .classList.add("show-form");
+              }}
+            >
+              Sign up
+            </button>
           </li>
           <li>
             <button id="upload">

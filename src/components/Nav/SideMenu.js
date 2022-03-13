@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/SideMenu.css";
-import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -39,6 +38,7 @@ function SideMenu() {
         setPopular(
           snapshot.docs
             .filter((doc) => doc.data().popular)
+            .sort((a, b) => a.data().section.localeCompare(b.data().section))
             .map((i) => (
               <li key={i.id}>
                 <a href="/">
@@ -85,25 +85,8 @@ function SideMenu() {
       }
     >
       <div className="side-menu">
-        <div className="side-menu-header">
-          <li
-            href="#"
-            id="side-menu-icon"
-            className="hoverCircle menuHover"
-            onClick={() =>
-              document
-                .querySelector(".side-menu-background")
-                .classList.toggle("show-menu")
-            }
-          >
-            <MenuIcon />
-          </li>
-          <a href="/" id="logo">
-            9GAG
-          </a>
-        </div>
         <ul className="main-sections">
-          <h4>9GAG</h4>
+          <h5>9GAG</h5>
           <li>
             <a href="/">
               <HomeIcon /> Hot
