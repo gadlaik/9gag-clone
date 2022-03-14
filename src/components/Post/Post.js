@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/Post.css";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -8,6 +8,8 @@ import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import ShareIcon from "@mui/icons-material/Share";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../../firebase";
 
 function Post({
   section,
@@ -18,13 +20,41 @@ function Post({
   comments,
   gifSrc,
 }) {
+  const [sectionIco, setSectionIco] = useState();
+
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "sections"), (snapshot) =>
+        setSectionIco(
+          snapshot.docs.map((snap) => ({
+            section: snap.data().section,
+            imgSrc: snap.data().imgSrc,
+          }))
+        )
+      ),
+    []
+  );
+
+  setTimeout(() => {
+    console.log(
+      sectionIco &&
+        sectionIco.filter((ico) => ico.section === section && ico.imgSrc)[0]
+          .imgSrc
+    );
+  }, 1000);
+
   return (
     <div className="post">
       {/* info, settings */}
       <div className="post-info">
         <div className="section-info">
           <img
-            src="http://localhost:3000/static/media/KEKW.c85349384101d8eafa4b.png"
+            src={
+              sectionIco &&
+              sectionIco.filter(
+                (ico) => ico.section === section && ico.imgSrc
+              )[0].imgSrc
+            }
             alt="section-ico"
             className="section-ico"
           />
