@@ -35,14 +35,6 @@ function Post({
     []
   );
 
-  setTimeout(() => {
-    console.log(
-      sectionIco &&
-        sectionIco.filter((ico) => ico.section === section && ico.imgSrc)[0]
-          .imgSrc
-    );
-  }, 1000);
-
   return (
     <div className="post">
       {/* info, settings */}

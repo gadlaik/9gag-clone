@@ -9,7 +9,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddIcon from "@mui/icons-material/Add";
-import kekw from "../../assets/KEKW.png";
 
 function Navbar() {
   return (
@@ -49,7 +48,10 @@ function Navbar() {
           </li>
           <li>
             <a href="/" title="Funny">
-              <img src={kekw} alt="KEKW" />
+              <img
+                src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1557376304.186_U5U7u5_100x100wp.webp"
+                alt="funny section"
+              />
             </a>
           </li>
           <li>
@@ -68,13 +70,13 @@ function Navbar() {
           <li className="hoverCircle">
             <SearchIcon />
           </li>
-          <li className="hoverCircle" id="notifications">
+          <li className="hoverCircle trio">
             <NotificationsIcon />
           </li>
           <li className="hoverCircle">
             <ChatBubbleIcon />
           </li>
-          <li id="avatar">
+          <li id="avatar" className="trio">
             <AccountCircleIcon />
           </li>
           <li className="logIn-signUp">
@@ -99,10 +101,8 @@ function Navbar() {
               Sign up
             </button>
           </li>
-          <li>
-            <button id="upload">
-              <AddIcon /> Upload
-            </button>
+          <li id="upload" className="trio">
+            <AddIcon /> Upload
           </li>
         </ul>
       </nav>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import "../../styles/CurrentSection.css";
 import Post from "../Post/Post";
+import ShortMenu from "./ShortMenu";
 
 function CurrentSection() {
   const [hot, setHot] = useState();
@@ -30,7 +31,12 @@ function CurrentSection() {
     []
   );
 
-  return <div id="current-section">{hot && hot}</div>;
+  return (
+    <div id="current-section">
+      <ShortMenu />
+      {hot && hot}
+    </div>
+  );
 }
 
 export default CurrentSection;
