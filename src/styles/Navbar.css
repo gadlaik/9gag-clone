@@ -23,8 +23,7 @@
 #logo,
 .secondary-menu,
 .secondary-menu li a,
-.user-menu,
-.user-menu li a {
+.user-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +69,9 @@
 .user-menu > .hoverCircle {
   transform: translateY(3px);
 }
+#notification {
+  transform: translateY(1px);
+}
 
 #upload,
 .signUp-btn,
@@ -102,6 +104,10 @@
   transform: translate(-6px, -6px);
   transition-duration: 250ms;
 }
+#notification::before {
+  content: "";
+  transform: translate(0px, 0px) !important;
+}
 .post-settings div:hover::before,
 .hoverCircle:hover::before {
   opacity: 0.15;
@@ -110,6 +116,31 @@
   content: "";
   transform: translate(0px, 0px);
   cursor: pointer;
+}
+
+#avatar {
+  transform: scale(1.75);
+  width: 42px;
+}
+.user-settings {
+  position: absolute;
+  top: 49px;
+  background: #1d1d1d;
+  width: 302px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  display: none;
+  flex-direction: column;
+}
+.user-settings li {
+  font-size: 14px;
+  padding: 14px;
+}
+.user-settings li:hover {
+  background-color: #333;
+}
+.user-settings li a {
+  color: gray;
 }
 
 #avatar:hover,

@@ -9,8 +9,17 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddIcon from "@mui/icons-material/Add";
+import { logOut } from "../../firebase";
 
 function Navbar() {
+  const handleLogOut = () => {
+    logOut();
+    document
+      .querySelectorAll(".trio")
+      .forEach((i) => i.classList.remove("show-form"));
+    document.querySelector(".logIn-signUp").style.display = "flex";
+  };
+
   return (
     <header className="top-nav">
       <nav className="nav-menu">
@@ -70,14 +79,40 @@ function Navbar() {
           <li className="hoverCircle">
             <SearchIcon />
           </li>
-          <li className="hoverCircle trio">
+          <li className="hoverCircle trio" id="notification">
             <NotificationsIcon />
           </li>
           <li className="hoverCircle">
             <ChatBubbleIcon />
           </li>
-          <li id="avatar" className="trio">
-            <AccountCircleIcon />
+          <li
+            className="trio"
+            onClick={() =>
+              document
+                .querySelector(".user-settings")
+                .classList.toggle("show-form")
+            }
+          >
+            <AccountCircleIcon id="avatar" />
+            <ul className="user-settings">
+              <li>
+                <a href="/">My Profile</a>
+              </li>
+              <li>
+                <a href="/">Settings</a>
+              </li>
+              <li>
+                <a href="/">Report Problems</a>
+              </li>
+              <li>
+                <a href="/">Contact</a>
+              </li>
+              <li onClick={() => handleLogOut()}>
+                <a href="/" style={{ color: "white" }}>
+                  Log out
+                </a>
+              </li>
+            </ul>
           </li>
           <li className="logIn-signUp">
             <button
